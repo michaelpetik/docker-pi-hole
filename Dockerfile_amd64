@@ -45,4 +45,8 @@ LABEL url="https://www.github.com/pi-hole/docker-pi-hole"
 
 HEALTHCHECK CMD dig @127.0.0.1 pi.hole || exit 1
 
+COPY docker-entrypoint.sh /usr/local/bin/
+
+CMD /usr/local/bin/docker-entrypoint.sh
+
 SHELL ["/bin/bash", "-c"]
